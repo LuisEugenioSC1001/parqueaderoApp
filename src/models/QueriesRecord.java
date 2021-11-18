@@ -51,7 +51,7 @@ public class QueriesRecord extends ModeloBD{
                
     }
     
-     public ModelRecord buscarregistro(int idregistro ){
+     public ModelRecord buscarRegistro(int idregistro ){
         
         Connection conexion = conectarBD_HemaSoft();
         String queryregistro = "SELECT * from registro where idregistro=?";
@@ -89,4 +89,7 @@ public class QueriesRecord extends ModeloBD{
         
         
     }
+     
+     
+     
 }
