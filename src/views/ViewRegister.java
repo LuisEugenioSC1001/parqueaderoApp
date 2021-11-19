@@ -29,13 +29,6 @@ public class ViewRegister extends javax.swing.JFrame {
     private void initComponents() {
 
         bg = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        BtnHome = new javax.swing.JPanel();
-        LblHome = new javax.swing.JLabel();
-        BtnFactura = new javax.swing.JPanel();
-        LblFactura = new javax.swing.JLabel();
-        BtnHistory = new javax.swing.JPanel();
-        LblHistory = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -48,14 +41,17 @@ public class ViewRegister extends javax.swing.JFrame {
         Txt_Apellidos = new javax.swing.JTextField();
         Txt_TelefonoFijo = new javax.swing.JTextField();
         ErrorMessage = new javax.swing.JLabel();
-        BtnGuardar = new javax.swing.JPanel();
-        LblGuardar = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        Txt_cedula1 = new javax.swing.JTextField();
+        Txt_placa = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         Txt_Tipo = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         Txt_Marca = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
+        btn_History = new javax.swing.JButton();
+        btn_Home = new javax.swing.JButton();
+        btn_NewRegister = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PARQUEADERO APP");
@@ -63,109 +59,6 @@ public class ViewRegister extends javax.swing.JFrame {
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
-
-        BtnHome.setBackground(new java.awt.Color(255, 255, 255));
-
-        LblHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LblHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/home.png"))); // NOI18N
-        LblHome.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        LblHome.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                LblHomeMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                LblHomeMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout BtnHomeLayout = new javax.swing.GroupLayout(BtnHome);
-        BtnHome.setLayout(BtnHomeLayout);
-        BtnHomeLayout.setHorizontalGroup(
-            BtnHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LblHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        BtnHomeLayout.setVerticalGroup(
-            BtnHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LblHome, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-        );
-
-        BtnFactura.setBackground(new java.awt.Color(255, 255, 255));
-
-        LblFactura.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LblFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/home.png"))); // NOI18N
-        LblFactura.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        LblFactura.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                LblFacturaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                LblFacturaMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout BtnFacturaLayout = new javax.swing.GroupLayout(BtnFactura);
-        BtnFactura.setLayout(BtnFacturaLayout);
-        BtnFacturaLayout.setHorizontalGroup(
-            BtnFacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LblFactura, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-        );
-        BtnFacturaLayout.setVerticalGroup(
-            BtnFacturaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LblFactura, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-        );
-
-        BtnHistory.setBackground(new java.awt.Color(255, 255, 255));
-
-        LblHistory.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LblHistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/home.png"))); // NOI18N
-        LblHistory.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        LblHistory.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                LblHistoryMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                LblHistoryMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout BtnHistoryLayout = new javax.swing.GroupLayout(BtnHistory);
-        BtnHistory.setLayout(BtnHistoryLayout);
-        BtnHistoryLayout.setHorizontalGroup(
-            BtnHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LblHistory, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-        );
-        BtnHistoryLayout.setVerticalGroup(
-            BtnHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LblHistory, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BtnFactura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BtnHistory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(193, 193, 193)
-                .addComponent(BtnHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BtnFactura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BtnHistory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        bg.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 720));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -177,34 +70,34 @@ public class ViewRegister extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("TELEFONO MOVIL");
-        bg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 180, 30));
+        bg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 180, 30));
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("CEDULA");
-        bg.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 180, 30));
+        bg.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, 180, 30));
 
         jLabel5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("NOMBRE");
-        bg.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 180, 30));
+        bg.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 180, 30));
 
         jLabel6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("APELLIDOS");
-        bg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 180, 30));
+        bg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 180, 30));
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("TELEFONO FIJO");
-        bg.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 180, 30));
+        bg.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 180, 30));
 
         Txt_TelefonoMovil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Txt_TelefonoMovilActionPerformed(evt);
             }
         });
-        bg.add(Txt_TelefonoMovil, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 300, 30));
+        bg.add(Txt_TelefonoMovil, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 300, 30));
 
         Txt_cedula.setToolTipText("");
         Txt_cedula.addActionListener(new java.awt.event.ActionListener() {
@@ -212,75 +105,46 @@ public class ViewRegister extends javax.swing.JFrame {
                 Txt_cedulaActionPerformed(evt);
             }
         });
-        bg.add(Txt_cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 300, 30));
+        bg.add(Txt_cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 90, 300, 30));
 
         Txt_Nombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Txt_NombreActionPerformed(evt);
             }
         });
-        bg.add(Txt_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 300, 30));
+        bg.add(Txt_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 300, 30));
 
         Txt_Apellidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Txt_ApellidosActionPerformed(evt);
             }
         });
-        bg.add(Txt_Apellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 300, 30));
+        bg.add(Txt_Apellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 300, 30));
 
         Txt_TelefonoFijo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Txt_TelefonoFijoActionPerformed(evt);
             }
         });
-        bg.add(Txt_TelefonoFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 300, 30));
+        bg.add(Txt_TelefonoFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 300, 30));
 
         ErrorMessage.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         ErrorMessage.setForeground(new java.awt.Color(204, 0, 51));
         ErrorMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bg.add(ErrorMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 1120, 110));
 
-        BtnGuardar.setBackground(new java.awt.Color(0, 0, 153));
-
-        LblGuardar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        LblGuardar.setForeground(new java.awt.Color(255, 255, 255));
-        LblGuardar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LblGuardar.setText("GUARDAR");
-        LblGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        LblGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                LblGuardarMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                LblGuardarMouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout BtnGuardarLayout = new javax.swing.GroupLayout(BtnGuardar);
-        BtnGuardar.setLayout(BtnGuardarLayout);
-        BtnGuardarLayout.setHorizontalGroup(
-            BtnGuardarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LblGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        BtnGuardarLayout.setVerticalGroup(
-            BtnGuardarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LblGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-        );
-
-        bg.add(BtnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 240, 320, -1));
-
         jLabel8.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("PLACA");
         bg.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, 180, 30));
 
-        Txt_cedula1.setToolTipText("");
-        Txt_cedula1.addActionListener(new java.awt.event.ActionListener() {
+        Txt_placa.setToolTipText("");
+        Txt_placa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Txt_cedula1ActionPerformed(evt);
+                Txt_placaActionPerformed(evt);
             }
         });
-        bg.add(Txt_cedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 90, 300, 30));
+        bg.add(Txt_placa, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 90, 300, 30));
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
@@ -308,6 +172,56 @@ public class ViewRegister extends javax.swing.JFrame {
         });
         bg.add(Txt_Marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 170, 300, 30));
 
+        jPanel2.setBackground(new java.awt.Color(51, 51, 255));
+
+        btn_History.setBackground(new java.awt.Color(102, 204, 255));
+        btn_History.setFont(new java.awt.Font("Arial", 0, 3)); // NOI18N
+        btn_History.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/history.png"))); // NOI18N
+
+        btn_Home.setBackground(new java.awt.Color(102, 204, 255));
+        btn_Home.setFont(new java.awt.Font("Arial", 0, 3)); // NOI18N
+        btn_Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/home.png"))); // NOI18N
+        btn_Home.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_HomeActionPerformed(evt);
+            }
+        });
+
+        btn_NewRegister.setBackground(new java.awt.Color(102, 204, 255));
+        btn_NewRegister.setFont(new java.awt.Font("Arial", 0, 3)); // NOI18N
+        btn_NewRegister.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/add.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_NewRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_Home, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_History, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(232, 232, 232)
+                .addComponent(btn_Home, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btn_NewRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btn_History, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(272, Short.MAX_VALUE))
+        );
+
+        bg.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 100, 720));
+
+        btnRegistrar.setBackground(new java.awt.Color(0, 0, 255));
+        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrar.setText("GUARDAR");
+        bg.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 240, 190, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -321,30 +235,6 @@ public class ViewRegister extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void LblHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblHomeMouseEntered
-        BtnHome.setBackground(Color.CYAN);
-    }//GEN-LAST:event_LblHomeMouseEntered
-
-    private void LblHomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblHomeMouseExited
-        BtnHome.setBackground(Color.WHITE);
-    }//GEN-LAST:event_LblHomeMouseExited
-
-    private void LblFacturaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblFacturaMouseEntered
-        BtnFactura.setBackground(Color.CYAN);
-    }//GEN-LAST:event_LblFacturaMouseEntered
-
-    private void LblFacturaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblFacturaMouseExited
-        BtnFactura.setBackground(Color.WHITE);
-    }//GEN-LAST:event_LblFacturaMouseExited
-
-    private void LblHistoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblHistoryMouseEntered
-        BtnHistory.setBackground(Color.CYAN);
-    }//GEN-LAST:event_LblHistoryMouseEntered
-
-    private void LblHistoryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblHistoryMouseExited
-        BtnHistory.setBackground(Color.WHITE);
-    }//GEN-LAST:event_LblHistoryMouseExited
 
     private void Txt_TelefonoMovilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_TelefonoMovilActionPerformed
         // TODO add your handling code here:
@@ -366,19 +256,9 @@ public class ViewRegister extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Txt_TelefonoFijoActionPerformed
 
-    private void LblGuardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblGuardarMouseEntered
-        BtnGuardar.setBackground(Color.CYAN);
-        LblGuardar.setForeground(Color.BLACK);
-    }//GEN-LAST:event_LblGuardarMouseEntered
-
-    private void LblGuardarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblGuardarMouseExited
-        BtnGuardar.setBackground(Color.BLUE);
-        LblGuardar.setForeground(Color.WHITE);
-    }//GEN-LAST:event_LblGuardarMouseExited
-
-    private void Txt_cedula1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_cedula1ActionPerformed
+    private void Txt_placaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_placaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Txt_cedula1ActionPerformed
+    }//GEN-LAST:event_Txt_placaActionPerformed
 
     private void Txt_TipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_TipoActionPerformed
         // TODO add your handling code here:
@@ -387,6 +267,10 @@ public class ViewRegister extends javax.swing.JFrame {
     private void Txt_MarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_MarcaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Txt_MarcaActionPerformed
+
+    private void btn_HomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_HomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_HomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -426,24 +310,20 @@ public class ViewRegister extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel BtnFactura;
-    private javax.swing.JPanel BtnGuardar;
-    private javax.swing.JPanel BtnHistory;
-    private javax.swing.JPanel BtnHome;
-    private javax.swing.JLabel ErrorMessage;
-    private javax.swing.JLabel LblFactura;
-    private javax.swing.JLabel LblGuardar;
-    private javax.swing.JLabel LblHistory;
-    private javax.swing.JLabel LblHome;
-    private javax.swing.JTextField Txt_Apellidos;
-    private javax.swing.JTextField Txt_Marca;
-    private javax.swing.JTextField Txt_Nombre;
-    private javax.swing.JTextField Txt_TelefonoFijo;
-    private javax.swing.JTextField Txt_TelefonoMovil;
-    private javax.swing.JTextField Txt_Tipo;
-    private javax.swing.JTextField Txt_cedula;
-    private javax.swing.JTextField Txt_cedula1;
+    public javax.swing.JLabel ErrorMessage;
+    public javax.swing.JTextField Txt_Apellidos;
+    public javax.swing.JTextField Txt_Marca;
+    public javax.swing.JTextField Txt_Nombre;
+    public javax.swing.JTextField Txt_TelefonoFijo;
+    public javax.swing.JTextField Txt_TelefonoMovil;
+    public javax.swing.JTextField Txt_Tipo;
+    public javax.swing.JTextField Txt_cedula;
+    public javax.swing.JTextField Txt_placa;
     private javax.swing.JPanel bg;
+    public javax.swing.JButton btnRegistrar;
+    public javax.swing.JButton btn_History;
+    public javax.swing.JButton btn_Home;
+    public javax.swing.JButton btn_NewRegister;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
@@ -453,6 +333,6 @@ public class ViewRegister extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }

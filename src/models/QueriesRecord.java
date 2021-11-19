@@ -7,86 +7,224 @@ package models;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author mrles
  */
-public class QueriesRecord extends ModeloBD{
+public class QueriesRecord extends ModeloBD {
+
     PreparedStatement consultaSQL;
     ResultSet resultadoSQL;
-    
-    
-    public boolean ingresoRegistro(ModelRecord registro){
-        
+
+    public boolean ingresoRegistro(ModelRecord registro) {
+
         Connection conexion = conectarBD_HemaSoft();
-        String queryregistro = "INSERT INTO registro(idregistro, placa, cedula, hora_ingreso, hora_salida, estado) "
-                + "VALUES (?,?,?,?,?,?)";
-        
-        try{
-        
+        String queryregistro = "INSERT INTO registro( placa, cedula, hora_ingreso, estado) "
+                + "VALUES (?,?,?,?)";
+
+        try {
+
             consultaSQL = conexion.prepareStatement(queryregistro);
-            
-            consultaSQL.setInt(1, registro.getIdregistro());
-            consultaSQL.setString(2, registro.getPlaca());
-            consultaSQL.setInt(3, registro.getCedula());
-            consultaSQL.setString(4, registro.getHora_ingreso());
-            consultaSQL.setString(5, registro.getHora_salida());
-            consultaSQL.setString(6, registro.getEstado());
-            
+
+            consultaSQL.setString(1, registro.getPlaca());
+            consultaSQL.setInt(2, registro.getCedula());
+            consultaSQL.setString(3, registro.getHora_ingreso());
+            consultaSQL.setString(4, registro.getEstado());
+
             int resultado = consultaSQL.executeUpdate();
-            
-            
-            if(resultado > 0){
-                return true;            
-            }else{
+
+            if (resultado > 0) {
+                return true;
+            } else {
                 return false;
-            }     
-            
-        }catch(Exception error){
-            System.out.println("UPPP error" + error);
-            
+            }
+
+        } catch (Exception error) {
+            System.out.println("ey error" + error);
+
             return false;
         }
-               
+
     }
-    
-     public ModelRecord buscarregistro(int idregistro ){
-        
+
+    public ModelRecord buscarregistro(int idregistro) {
+
         Connection conexion = conectarBD_HemaSoft();
         String queryregistro = "SELECT * from registro where idregistro=?";
-        
-        try{
-           
+
+        try {
+
             consultaSQL = conexion.prepareStatement(queryregistro);
-            
-            consultaSQL.setInt(1,idregistro);
-            
-            resultadoSQL= consultaSQL.executeQuery();
-            
+
+            consultaSQL.setInt(1, idregistro);
+
+            resultadoSQL = consultaSQL.executeQuery();
+
             ModelRecord registro = new ModelRecord();
-            
-            if(resultadoSQL.next()){
-                registro.setIdregistro(resultadoSQL.getInt("idregistro"));
+
+            if (resultadoSQL.next()) {
+
                 registro.setPlaca(resultadoSQL.getString("placa"));
                 registro.setCedula(resultadoSQL.getInt("cedula"));
                 registro.setHora_ingreso(resultadoSQL.getString("hora_ingreso"));
                 registro.setHora_salida(resultadoSQL.getString("hora_salida"));
                 registro.setEstado(resultadoSQL.getString("estado"));
-                
+
                 return registro;
-                
-            }else{
+
+            } else {
                 return null;
             }
-           
-       
-        }catch(Exception error){
+
+        } catch (Exception error) {
             System.out.println("UPPS error" + error);
-        
+
             return null;
         }
-        
-        
+
+    }
+
+    public List<ModelRecord> getRegistrosActivos() {
+        Connection conexion = conectarBD_HemaSoft();
+        String queryregistro = "SELECT * from registro where estado=?";
+        ArrayList<ModelRecord> dataBD = new ArrayList<ModelRecord>();
+
+        try {
+
+            consultaSQL = conexion.prepareStatement(queryregistro);
+
+            consultaSQL.setString(1, "activo");
+
+            resultadoSQL = consultaSQL.executeQuery();
+
+            ModelRecord modelRecord = new ModelRecord();
+
+            if (resultadoSQL.next()) {
+                while (resultadoSQL.next()) {
+                    modelRecord.setIdregistro(resultadoSQL.getInt("idregistro"));
+                    modelRecord.setCedula(resultadoSQL.getInt("cedula"));
+                    modelRecord.setEstado(resultadoSQL.getString("estado"));
+                    modelRecord.setHora_ingreso(resultadoSQL.getString("hora_ingreso"));
+                    modelRecord.setHora_salida(null);
+                    modelRecord.setPlaca(resultadoSQL.getString("placa"));
+                    modelRecord.setPosicion(resultadoSQL.getInt("posicion"));
+
+                    dataBD.add(modelRecord);
+                }
+
+                return dataBD;
+
+            } else {
+                return null;
+            }
+
+        } catch (Exception error) {
+            System.out.println("UPPS error" + error);
+
+            return null;
+        }
+    }
+
+    public List<ModelRecord> getRegistros() {
+        Connection conexion = conectarBD_HemaSoft();
+        String queryregistro = "SELECT * from registro";
+        ArrayList<ModelRecord> dataBD = new ArrayList<ModelRecord>();
+
+        try {
+
+            consultaSQL = conexion.prepareStatement(queryregistro);
+
+            resultadoSQL = consultaSQL.executeQuery();
+
+            ModelRecord modelRecord = new ModelRecord();
+
+            if (resultadoSQL.next()) {
+                while (resultadoSQL.next()) {
+                    modelRecord.setIdregistro(resultadoSQL.getInt("idregistro"));
+                    modelRecord.setCedula(resultadoSQL.getInt("cedula"));
+                    modelRecord.setEstado(resultadoSQL.getString("estado"));
+                    modelRecord.setHora_ingreso(resultadoSQL.getString("hora_ingreso"));
+                    modelRecord.setHora_salida(resultadoSQL.getString("hora_salida"));
+                    modelRecord.setPlaca(resultadoSQL.getString("placa"));
+                    modelRecord.setPosicion(Integer.parseInt(resultadoSQL.getString("posicion")));
+
+                    dataBD.add(modelRecord);
+                }
+
+                return dataBD;
+
+            } else {
+                return null;
+            }
+
+        } catch (Exception error) {
+            System.out.println("UPPS error" + error);
+
+            return null;
+        }
+    }
+
+    public boolean actualizarRegistro(ModelRecord registro) {
+
+        Connection conexion = conectarBD_HemaSoft();
+        String queryregistro = "UPDATE registro SET placa=?,cedula=?,hora_ingreso=?,hora_salida=?,estado=?,posicion=? WHERE idregistro=?";
+
+        try {
+
+            consultaSQL = conexion.prepareStatement(queryregistro);
+
+            consultaSQL.setString(1, registro.getPlaca());
+            consultaSQL.setInt(2, registro.getCedula());
+            consultaSQL.setString(3, registro.getHora_ingreso());
+            consultaSQL.setString(4, registro.getHora_salida());
+            consultaSQL.setString(5, registro.getEstado());
+            consultaSQL.setInt(6, registro.getPosicion());
+            consultaSQL.setInt(7, registro.getIdregistro());
+
+            int resultado = consultaSQL.executeUpdate();
+
+            if (resultado > 0) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (Exception error) {
+            System.out.println("ey error" + error);
+
+            return false;
+        }
+
+    }
+    public boolean liquidarRegistro(ModelRecord registro) {
+
+        Connection conexion = conectarBD_HemaSoft();
+        String queryregistro = "UPDATE registro SET hora_salida=?,estado=? WHERE idregistro=?";
+
+        try {
+
+            consultaSQL = conexion.prepareStatement(queryregistro);
+
+            consultaSQL.setString(1, registro.getHora_salida());
+            consultaSQL.setString(2, "inactivo");
+            consultaSQL.setInt(3, registro.getIdregistro());
+
+            int resultado = consultaSQL.executeUpdate();
+
+            if (resultado > 0) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (Exception error) {
+            System.out.println("ey error" + error);
+
+            return false;
+        }
+
     }
 }

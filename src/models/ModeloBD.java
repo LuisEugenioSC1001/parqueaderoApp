@@ -26,7 +26,6 @@ public class ModeloBD {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             conexion= DriverManager.getConnection(servidor, usuario, password);
-            System.out.println("YEAHHHH........Conexion BD Exitosa....");
             return conexion;
         }catch(Exception error){
             System.out.println("UPPS....." + error);

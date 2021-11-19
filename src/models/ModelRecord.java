@@ -15,23 +15,34 @@ public class ModelRecord {
     private String hora_ingreso;
     private String hora_salida;
     private String estado;
+    private int posicion;
 
     public ModelRecord() {
     }
 
-    public ModelRecord(int idregistro, String placa, int cedula, String hora_ingreso, String hora_salida, String estado) {
+    public ModelRecord(int idregistro, String placa, int cedula, String hora_ingreso, String hora_salida, String estado,int posicion) {
         this.idregistro = idregistro;
         this.placa = placa;
         this.cedula = cedula;
         this.hora_ingreso = hora_ingreso;
         this.hora_salida = hora_salida;
         this.estado = estado;
+        this.posicion = posicion;
     }
 
+    public int getPosicion() {
+        return posicion;
+    }
+
+    public void setPosicion(int posicion) {
+        this.posicion = posicion;
+    }
+
+    
     public int getIdregistro() {
         return idregistro;
     }
-
+ 
     public void setIdregistro(int idregistro) {
         this.idregistro = idregistro;
     }
