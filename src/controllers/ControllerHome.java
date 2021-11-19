@@ -66,6 +66,7 @@ public class ControllerHome implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        ModelRecord registroLiquidar = new ModelRecord();
         if (e.getSource() == viewHome.btn_Home) {
 
         } else if (e.getSource() == viewHome.btn_History) {
@@ -84,7 +85,7 @@ public class ControllerHome implements ActionListener {
                 QueriesClient queriesClient = new QueriesClient();
 
                 ModelRecord findData = queriesRecord.buscarregistro(Integer.parseInt(viewHome.TableRegisters.getModel().getValueAt(viewHome.TableRegisters.getSelectedRow(), 0).toString()));
-                
+
                 ModelClient cliente = queriesClient.buscarCliente(findData.getCedula());
 
                 try {
@@ -92,8 +93,8 @@ public class ControllerHome implements ActionListener {
                     SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                     String fechaSalida = formato.format(salida);
                     findData.setHora_salida(fechaSalida);
-                    
-                    modeloRegistro.setHora_salida(fechaSalida);
+
+                    registroLiquidar.setHora_salida(fechaSalida);
                     String entrada = findData.getHora_ingreso();
                     Date fechaEntrada = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(entrada);
 
@@ -114,21 +115,21 @@ public class ControllerHome implements ActionListener {
                 viewHome.Lbl_ValorAPagar.setText(String.valueOf(valor));
 
                 viewHome.Btn_Guardar.setVisible(true);
-                
-                modeloRegistro.setIdregistro(findData.getIdregistro());
-                modeloRegistro.setPlaca(findData.getPlaca());
-                modeloRegistro.setCedula(findData.getCedula());
-                modeloRegistro.setHora_ingreso(findData.getHora_ingreso());
-                modeloRegistro.setEstado(findData.getEstado());
-                modeloRegistro.setPosicion(findData.getPosicion());
-                
+
+                registroLiquidar.setIdregistro(findData.getIdregistro());
+                registroLiquidar.setPlaca(findData.getPlaca());
+                registroLiquidar.setCedula(findData.getCedula());
+                registroLiquidar.setHora_ingreso(findData.getHora_ingreso());
+                registroLiquidar.setEstado(findData.getEstado());
+                registroLiquidar.setPosicion(findData.getPosicion());
+
             } else {
                 JOptionPane.showMessageDialog(null, "Por favor seleccione un registro en la tabla");
             }
 
         } else if (e.getSource() == viewHome.Btn_Guardar) {
 
-            if (queriesRecord.liquidarRegistro(modeloRegistro)) {
+            if (queriesRecord.liquidarRegistro(registroLiquidar)) {
                 JOptionPane.showMessageDialog(null, "El registro se ha liquidado");
             } else {
                 JOptionPane.showMessageDialog(null, "No se ha podido liquidar el vehiculo");

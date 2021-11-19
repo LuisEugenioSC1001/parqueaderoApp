@@ -69,6 +69,7 @@ public class ControllerRegister implements ActionListener {
                 modeloRegistro.setPlaca(vistaRegister.Txt_placa.getText());
                 modeloRegistro.setHora_salida("");
                 modeloRegistro.setEstado("activo");
+                modeloRegistro.setPosicion(3);
 
                 Date entrada = new Date();
                 SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
