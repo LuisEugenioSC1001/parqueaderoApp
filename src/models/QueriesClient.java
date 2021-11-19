@@ -29,8 +29,8 @@ public class QueriesClient extends ModeloBD{
             consultaSQL.setInt(1, cliente.getCedula());
             consultaSQL.setString(3, cliente.getApellidos());
             consultaSQL.setString(2, cliente.getNombres());
-            consultaSQL.setInt(1, cliente.getTelefono_movil());
-            consultaSQL.setInt(1, cliente.getTelefono_fijo());
+            consultaSQL.setInt(4, cliente.getTelefono_movil());
+            consultaSQL.setInt(5, cliente.getTelefono_fijo());
          
             
             int resultado = consultaSQL.executeUpdate();
