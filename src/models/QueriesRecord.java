@@ -100,26 +100,21 @@ public class QueriesRecord extends ModeloBD {
 
             resultadoSQL = consultaSQL.executeQuery();
 
-            ModelRecord modelRecord = new ModelRecord();
+            while (resultadoSQL.next()) {
+                ModelRecord modelRecord = new ModelRecord();
 
-            if (resultadoSQL.next()) {
-                while (resultadoSQL.next()) {
-                    modelRecord.setIdregistro(resultadoSQL.getInt("idregistro"));
-                    modelRecord.setCedula(resultadoSQL.getInt("cedula"));
-                    modelRecord.setEstado(resultadoSQL.getString("estado"));
-                    modelRecord.setHora_ingreso(resultadoSQL.getString("hora_ingreso"));
-                    modelRecord.setHora_salida(null);
-                    modelRecord.setPlaca(resultadoSQL.getString("placa"));
-                    modelRecord.setPosicion(resultadoSQL.getInt("posicion"));
+                modelRecord.setIdregistro(resultadoSQL.getInt("idregistro"));
+                modelRecord.setCedula(resultadoSQL.getInt("cedula"));
+                modelRecord.setEstado(resultadoSQL.getString("estado"));
+                modelRecord.setHora_ingreso(resultadoSQL.getString("hora_ingreso"));
+                modelRecord.setHora_salida(resultadoSQL.getString("hora_salida"));
+                modelRecord.setPlaca(resultadoSQL.getString("placa"));
+                modelRecord.setPosicion(resultadoSQL.getInt("posicion"));
 
-                    dataBD.add(modelRecord);
-                }
-
-                return dataBD;
-
-            } else {
-                return null;
+                dataBD.add(modelRecord);
             }
+
+            return dataBD;
 
         } catch (Exception error) {
             System.out.println("UPPS error" + error);
@@ -139,26 +134,23 @@ public class QueriesRecord extends ModeloBD {
 
             resultadoSQL = consultaSQL.executeQuery();
 
-            ModelRecord modelRecord = new ModelRecord();
+            
 
-            if (resultadoSQL.next()) {
-                while (resultadoSQL.next()) {
-                    modelRecord.setIdregistro(resultadoSQL.getInt("idregistro"));
-                    modelRecord.setCedula(resultadoSQL.getInt("cedula"));
-                    modelRecord.setEstado(resultadoSQL.getString("estado"));
-                    modelRecord.setHora_ingreso(resultadoSQL.getString("hora_ingreso"));
-                    modelRecord.setHora_salida(resultadoSQL.getString("hora_salida"));
-                    modelRecord.setPlaca(resultadoSQL.getString("placa"));
-                    modelRecord.setPosicion(Integer.parseInt(resultadoSQL.getString("posicion")));
+            while (resultadoSQL.next()) {
+                ModelRecord modelRecord = new ModelRecord();
+                
+                modelRecord.setIdregistro(resultadoSQL.getInt("idregistro"));
+                modelRecord.setCedula(resultadoSQL.getInt("cedula"));
+                modelRecord.setEstado(resultadoSQL.getString("estado"));
+                modelRecord.setHora_ingreso(resultadoSQL.getString("hora_ingreso"));
+                modelRecord.setHora_salida(resultadoSQL.getString("hora_salida"));
+                modelRecord.setPlaca(resultadoSQL.getString("placa"));
+                modelRecord.setPosicion(Integer.parseInt(resultadoSQL.getString("posicion")));
 
-                    dataBD.add(modelRecord);
-                }
-
-                return dataBD;
-
-            } else {
-                return null;
+                dataBD.add(modelRecord);
             }
+
+            return dataBD;
 
         } catch (Exception error) {
             System.out.println("UPPS error" + error);
@@ -199,6 +191,7 @@ public class QueriesRecord extends ModeloBD {
         }
 
     }
+
     public boolean liquidarRegistro(ModelRecord registro) {
 
         Connection conexion = conectarBD_HemaSoft();
