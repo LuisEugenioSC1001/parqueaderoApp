@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-11-2021 a las 05:35:36
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.3
+-- Tiempo de generación: 19-11-2021 a las 23:43:44
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -44,7 +43,11 @@ INSERT INTO `clientes` (`cedula`, `nombre`, `apellidos`, `telefono_movil`, `tele
 (23, 'sdf', 'sdfg', 23, 1234),
 (234, 'sdagf', 'fagdsaf', 654, 76543),
 (2345, 'efadsfa', 'dsafa', 3456, 234),
-(780000337, 'Arturo', 'Benavides', 455555, 1234);
+(39452, 'Luis', 'Saldarriaga', 36422, 3652461),
+(365545, 'Luis', 'Saldarriaga', 54525, 251323),
+(39172496, 'Luis', 'Saldarriaga', 54154, 36542),
+(780000337, 'Arturo', 'Benavides', 455555, 1234),
+(1001810262, 'Luis', 'Saldarriaga', 6422, 3511);
 
 -- --------------------------------------------------------
 
@@ -58,16 +61,18 @@ CREATE TABLE `registro` (
   `cedula` int(11) NOT NULL,
   `hora_ingreso` datetime NOT NULL,
   `hora_salida` datetime DEFAULT NULL,
-  `estado` varchar(20) NOT NULL
+  `estado` varchar(20) NOT NULL,
+  `posicion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `registro`
 --
 
-INSERT INTO `registro` (`idregistro`, `placa`, `cedula`, `hora_ingreso`, `hora_salida`, `estado`) VALUES
-(1, '345', 23, '2021-11-18 23:22:54', NULL, 'activo'),
-(2, '456789', 780000337, '2021-11-18 23:24:59', NULL, 'activo');
+INSERT INTO `registro` (`idregistro`, `placa`, `cedula`, `hora_ingreso`, `hora_salida`, `estado`, `posicion`) VALUES
+(1, '345', 23, '2021-11-18 23:22:54', NULL, 'activo', 1),
+(2, '456789', 780000337, '2021-11-18 23:24:59', NULL, 'activo', 2),
+(3, 'ABC-554', 365545, '2021-11-19 16:25:08', NULL, 'activo', 3);
 
 -- --------------------------------------------------------
 
@@ -88,6 +93,10 @@ CREATE TABLE `vehiculos` (
 INSERT INTO `vehiculos` (`placa`, `marca`, `tipo`) VALUES
 ('345', 'gdgsdfg', 'dfgfdgsd'),
 ('456789', 'chevrolet', 'antiguo'),
+('ABC-254', 'FORD', '4x4'),
+('ABC-365', 'FORD', '4x4'),
+('ABC-554', 'FORD', '4x4'),
+('ABC-789', 'FORD', 'Auto'),
 ('cxvsgvasdg', 'affdfa', 'dfaad'),
 ('dsfgf', 'dafsfd', 'asdfas');
 
@@ -123,7 +132,7 @@ ALTER TABLE `vehiculos`
 -- AUTO_INCREMENT de la tabla `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `idregistro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idregistro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
