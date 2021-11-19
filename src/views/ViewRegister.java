@@ -10,12 +10,12 @@ import java.awt.Color;
  *
  * @author mrles
  */
-public class ViewHome extends javax.swing.JFrame {
+public class ViewRegister extends javax.swing.JFrame {
 
     /**
      * Creates new form ViewHome
      */
-    public ViewHome() {
+    public ViewRegister() {
         initComponents();
     }
 
@@ -37,7 +37,25 @@ public class ViewHome extends javax.swing.JFrame {
         BtnHistory = new javax.swing.JPanel();
         LblHistory = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        Txt_TelefonoMovil = new javax.swing.JTextField();
+        Txt_cedula = new javax.swing.JTextField();
+        Txt_Nombre = new javax.swing.JTextField();
+        Txt_Apellidos = new javax.swing.JTextField();
+        Txt_TelefonoFijo = new javax.swing.JTextField();
         ErrorMessage = new javax.swing.JLabel();
+        BtnGuardar = new javax.swing.JPanel();
+        LblGuardar = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        Txt_cedula1 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        Txt_Tipo = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        Txt_Marca = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PARQUEADERO APP");
@@ -153,13 +171,142 @@ public class ViewHome extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("INICIO");
+        jLabel1.setText("NUEVO REGISTRO");
         bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 1250, 50));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("TELEFONO MOVIL");
+        bg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 180, 30));
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel4.setText("CEDULA");
+        bg.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 180, 30));
+
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("NOMBRE");
+        bg.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 180, 30));
+
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("APELLIDOS");
+        bg.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 180, 30));
+
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("TELEFONO FIJO");
+        bg.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 180, 30));
+
+        Txt_TelefonoMovil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Txt_TelefonoMovilActionPerformed(evt);
+            }
+        });
+        bg.add(Txt_TelefonoMovil, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 300, 30));
+
+        Txt_cedula.setToolTipText("");
+        Txt_cedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Txt_cedulaActionPerformed(evt);
+            }
+        });
+        bg.add(Txt_cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 300, 30));
+
+        Txt_Nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Txt_NombreActionPerformed(evt);
+            }
+        });
+        bg.add(Txt_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 300, 30));
+
+        Txt_Apellidos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Txt_ApellidosActionPerformed(evt);
+            }
+        });
+        bg.add(Txt_Apellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 300, 30));
+
+        Txt_TelefonoFijo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Txt_TelefonoFijoActionPerformed(evt);
+            }
+        });
+        bg.add(Txt_TelefonoFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 300, 30));
 
         ErrorMessage.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
         ErrorMessage.setForeground(new java.awt.Color(204, 0, 51));
         ErrorMessage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bg.add(ErrorMessage, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 1120, 110));
+
+        BtnGuardar.setBackground(new java.awt.Color(0, 0, 153));
+
+        LblGuardar.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        LblGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        LblGuardar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LblGuardar.setText("GUARDAR");
+        LblGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LblGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LblGuardarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LblGuardarMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout BtnGuardarLayout = new javax.swing.GroupLayout(BtnGuardar);
+        BtnGuardar.setLayout(BtnGuardarLayout);
+        BtnGuardarLayout.setHorizontalGroup(
+            BtnGuardarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LblGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        BtnGuardarLayout.setVerticalGroup(
+            BtnGuardarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LblGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+        );
+
+        bg.add(BtnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 240, 320, -1));
+
+        jLabel8.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("PLACA");
+        bg.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 90, 180, 30));
+
+        Txt_cedula1.setToolTipText("");
+        Txt_cedula1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Txt_cedula1ActionPerformed(evt);
+            }
+        });
+        bg.add(Txt_cedula1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 90, 300, 30));
+
+        jLabel9.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("TIPO");
+        bg.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 180, 30));
+
+        Txt_Tipo.setToolTipText("");
+        Txt_Tipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Txt_TipoActionPerformed(evt);
+            }
+        });
+        bg.add(Txt_Tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 130, 300, 30));
+
+        jLabel10.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("MARCA");
+        bg.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 170, 180, 30));
+
+        Txt_Marca.setToolTipText("");
+        Txt_Marca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Txt_MarcaActionPerformed(evt);
+            }
+        });
+        bg.add(Txt_Marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 170, 300, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -199,6 +346,48 @@ public class ViewHome extends javax.swing.JFrame {
         BtnHistory.setBackground(Color.WHITE);
     }//GEN-LAST:event_LblHistoryMouseExited
 
+    private void Txt_TelefonoMovilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_TelefonoMovilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Txt_TelefonoMovilActionPerformed
+
+    private void Txt_cedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_cedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Txt_cedulaActionPerformed
+
+    private void Txt_NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_NombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Txt_NombreActionPerformed
+
+    private void Txt_ApellidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_ApellidosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Txt_ApellidosActionPerformed
+
+    private void Txt_TelefonoFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_TelefonoFijoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Txt_TelefonoFijoActionPerformed
+
+    private void LblGuardarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblGuardarMouseEntered
+        BtnGuardar.setBackground(Color.CYAN);
+        LblGuardar.setForeground(Color.BLACK);
+    }//GEN-LAST:event_LblGuardarMouseEntered
+
+    private void LblGuardarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LblGuardarMouseExited
+        BtnGuardar.setBackground(Color.BLUE);
+        LblGuardar.setForeground(Color.WHITE);
+    }//GEN-LAST:event_LblGuardarMouseExited
+
+    private void Txt_cedula1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_cedula1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Txt_cedula1ActionPerformed
+
+    private void Txt_TipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_TipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Txt_TipoActionPerformed
+
+    private void Txt_MarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txt_MarcaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Txt_MarcaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -216,23 +405,21 @@ public class ViewHome extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewRegister.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewRegister.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewRegister.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewRegister.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewHome().setVisible(true);
+                new ViewRegister().setVisible(true);
 
             }
         });
@@ -240,14 +427,32 @@ public class ViewHome extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BtnFactura;
+    private javax.swing.JPanel BtnGuardar;
     private javax.swing.JPanel BtnHistory;
     private javax.swing.JPanel BtnHome;
     private javax.swing.JLabel ErrorMessage;
     private javax.swing.JLabel LblFactura;
+    private javax.swing.JLabel LblGuardar;
     private javax.swing.JLabel LblHistory;
     private javax.swing.JLabel LblHome;
+    private javax.swing.JTextField Txt_Apellidos;
+    private javax.swing.JTextField Txt_Marca;
+    private javax.swing.JTextField Txt_Nombre;
+    private javax.swing.JTextField Txt_TelefonoFijo;
+    private javax.swing.JTextField Txt_TelefonoMovil;
+    private javax.swing.JTextField Txt_Tipo;
+    private javax.swing.JTextField Txt_cedula;
+    private javax.swing.JTextField Txt_cedula1;
     private javax.swing.JPanel bg;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

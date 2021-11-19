@@ -4,11 +4,11 @@
  */
 package parqueaderoapp;
 
-import controllers.ControllerHome;
+import controllers.ControllerRegister;
 import models.ModelClient;
 import models.ModelRecord;
 import models.ModelVehicle;
-import views.ViewHome;
+import views.ViewRegister;
 
 /**
  *
@@ -20,14 +20,14 @@ public class ParqueaderoApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ViewHome vistaHome = new ViewHome();
+        ViewRegister vistaHome = new ViewRegister();
         ModelClient modeloCliente = new ModelClient();
         ModelVehicle modeloVehiculo = new ModelVehicle();
         ModelRecord modeloRegistro = new ModelRecord();
 
         vistaHome.setVisible(true);
 
-        ControllerHome controladorHome = new ControllerHome(vistaHome, modeloCliente, modeloVehiculo, modeloRegistro);
+        ControllerRegister controladorHome = new ControllerRegister(vistaHome, modeloCliente, modeloVehiculo, modeloRegistro);
     }
 
 }
