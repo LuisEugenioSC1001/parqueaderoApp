@@ -9,7 +9,7 @@ package models;
  * @author mrles
  */
 public class ModelRecord {
-    private int idregistro;
+
     private String placa;
     private int cedula;
     private String hora_ingreso;
@@ -19,8 +19,8 @@ public class ModelRecord {
     public ModelRecord() {
     }
 
-    public ModelRecord(int idregistro, String placa, int cedula, String hora_ingreso, String hora_salida, String estado) {
-        this.idregistro = idregistro;
+    public ModelRecord( String placa, int cedula, String hora_ingreso, String hora_salida, String estado) {
+       
         this.placa = placa;
         this.cedula = cedula;
         this.hora_ingreso = hora_ingreso;
@@ -28,13 +28,7 @@ public class ModelRecord {
         this.estado = estado;
     }
 
-    public int getIdregistro() {
-        return idregistro;
-    }
-
-    public void setIdregistro(int idregistro) {
-        this.idregistro = idregistro;
-    }
+ 
 
     public String getPlaca() {
         return placa;
