@@ -196,19 +196,15 @@ public class QueriesRecord extends ModeloBD {
     public boolean liquidarRegistro(ModelRecord registro) {
 
         Connection conexion = conectarBD_HemaSoft();
-        String queryregistro = "UPDATE registro SET placa=?,cedula=?,hora_ingreso=?,hora_salida=?,estado=?,posicion=? WHERE idregistro=?";
+        String queryregistro = "UPDATE registro SET hora_salida=?,estado=? WHERE idregistro=?";
 
         try {
 
             consultaSQL = conexion.prepareStatement(queryregistro);
 
-            consultaSQL.setString(1, registro.getPlaca());
-            consultaSQL.setInt(2, registro.getCedula());
-            consultaSQL.setString(3, registro.getHora_ingreso());
-            consultaSQL.setString(4, registro.getHora_salida());
-            consultaSQL.setString(5, "inactivo");
-            consultaSQL.setInt(6, registro.getPosicion());
-            consultaSQL.setInt(7, registro.getIdregistro());
+            consultaSQL.setString(1, registro.getHora_salida());
+            consultaSQL.setString(2, "inactivo");
+            consultaSQL.setInt(3, registro.getIdregistro());
 
             int resultado = consultaSQL.executeUpdate();
 

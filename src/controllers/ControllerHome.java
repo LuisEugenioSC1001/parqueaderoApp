@@ -33,14 +33,16 @@ public class ControllerHome implements ActionListener {
     ModelVehicle modeloVehiculo = new ModelVehicle();
     ModelRecord modeloRegistro = new ModelRecord();
     ViewHome viewHome = new ViewHome();
+    ModelRecord registroLiquidar = new ModelRecord();
 
     public ControllerHome(ViewHome viewHome, ModelClient modelClient, ModelRecord modelRecord, ModelVehicle modelVehicle) {
+        
         List<ModelRecord> datos = queriesRecord.getRegistrosActivos();
         this.viewHome = viewHome;
         this.modeloCliente = modelClient;
         this.modeloRegistro = modelRecord;
         this.modeloVehiculo = modelVehicle;
-
+        
         viewHome.btn_Home.addActionListener(this);
         viewHome.btn_addRegister.addActionListener(this);
         viewHome.btn_History.addActionListener(this);
@@ -66,7 +68,7 @@ public class ControllerHome implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        ModelRecord registroLiquidar = new ModelRecord();
+        
         if (e.getSource() == viewHome.btn_Home) {
 
         } else if (e.getSource() == viewHome.btn_History) {
@@ -116,7 +118,7 @@ public class ControllerHome implements ActionListener {
 
                 viewHome.Btn_Guardar.setVisible(true);
 
-                registroLiquidar.setIdregistro(findData.getIdregistro());
+                registroLiquidar.setIdregistro(Integer.parseInt(viewHome.TableRegisters.getModel().getValueAt(viewHome.TableRegisters.getSelectedRow(), 0).toString()));
                 registroLiquidar.setPlaca(findData.getPlaca());
                 registroLiquidar.setCedula(findData.getCedula());
                 registroLiquidar.setHora_ingreso(findData.getHora_ingreso());
@@ -128,7 +130,6 @@ public class ControllerHome implements ActionListener {
             }
 
         } else if (e.getSource() == viewHome.Btn_Guardar) {
-
             if (queriesRecord.liquidarRegistro(registroLiquidar)) {
                 JOptionPane.showMessageDialog(null, "El registro se ha liquidado");
             } else {

@@ -8,6 +8,7 @@ import controllers.ControllerHome;
 import models.ModelClient;
 import models.ModelRecord;
 import models.ModelVehicle;
+import models.Settings;
 import views.ViewHome;
 
 /**
@@ -20,11 +21,11 @@ public class ParqueaderoApp {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Settings settings = new Settings();
         ViewHome vistaHome = new ViewHome();
         ModelClient modeloCliente = new ModelClient();
         ModelVehicle modeloVehiculo = new ModelVehicle();
         ModelRecord modeloRegistro = new ModelRecord();
-
         vistaHome.setVisible(true);
 
         ControllerHome controladorHome = new ControllerHome(vistaHome, modeloCliente, modeloRegistro, modeloVehiculo);
